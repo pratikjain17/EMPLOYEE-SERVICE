@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-//@ComponentScan("com.pratik.www.employee.db.repository")
 public class EmployeeApplication {
 
 	public static void main(String[] args) {
