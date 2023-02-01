@@ -13,9 +13,6 @@ import org.springframework.kafka.config.TopicBuilder;
 @PropertySource("classpath:application.properties")
 public class KafkaConfig {
 
-//    @Value("{spring.kafka.topic.name}")
-//    private String topicName;
-
     @Autowired
     Environment env;
 
