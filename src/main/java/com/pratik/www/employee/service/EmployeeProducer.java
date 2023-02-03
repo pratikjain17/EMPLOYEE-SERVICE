@@ -35,7 +35,7 @@ public class EmployeeProducer {
         LOGGER.info(String.format("Order Event => %s", employee.toString()));
 
         Message<Optional<EmployeeEntity>> message = MessageBuilder.withPayload(employee)
-                .setHeader(KafkaHeaders.TOPIC,topic.name())
+                .setHeader(KafkaHeaders.TOPIC ,topic.name())
                 .build();
         kafkaTemplate.send(message);
     }

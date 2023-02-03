@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -19,4 +20,8 @@ public class KafkaEmployeeController {
     public void getEmployee(@PathVariable("employeeId") String id){
          employeeProducer.sendMessage(id);
     }
+
+//    @GetMapping("/all")
+//    public List<EmployeeEntity> getAllEmployees() {
+//    }
 }
