@@ -23,6 +23,7 @@ public class EmployeeProducer {
     @Autowired
     private EmployeeEntityRepository employeeRepo;
 
+    @Autowired
     private KafkaTemplate<String, EmployeeEntity> kafkaTemplate;
 
     public EmployeeProducer(NewTopic topic, KafkaTemplate<String, EmployeeEntity> kafkaTemplate) {
