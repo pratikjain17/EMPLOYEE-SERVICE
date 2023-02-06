@@ -1,6 +1,7 @@
 package com.pratik.www.employee.db.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -26,8 +27,7 @@ public class EmployeeEntity {
     private String name;
     private String deptName;
     private String address;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm a z")
-    private Date joiningDate;
+    private LocalDate joiningDate;
     private int baseSalary;
 
     public EmployeeEntity() {}
@@ -57,7 +57,7 @@ public class EmployeeEntity {
         return address;
     }
 
-    public Date getJoiningDate() {
+    public LocalDate getJoiningDate() {
         return joiningDate;
     }
 
@@ -83,7 +83,7 @@ public class EmployeeEntity {
         protected String name;
         protected String deptName;
         protected String address;
-        protected Date joiningDate;
+        protected LocalDate joiningDate;
         protected int baseSalary;
 
         public EmployeeEntityBuilder setId(String id) {
@@ -106,7 +106,7 @@ public class EmployeeEntity {
             return this;
         }
 
-        public EmployeeEntityBuilder setJoiningDate(Date joiningDate) {
+        public EmployeeEntityBuilder setJoiningDate(LocalDate joiningDate) {
             this.joiningDate = joiningDate;
             return this;
         }
