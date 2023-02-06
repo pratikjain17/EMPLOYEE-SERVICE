@@ -31,10 +31,10 @@ public class EmployeeProducer {
     }
 
     public void sendMessage(String employeeId){
-        Optional<EmployeeEntity> employee = employeeRepo.findById(employeeId);
+        EmployeeEntity employee = employeeRepo.findById(employeeId).get();
         LOGGER.info(String.format("Order Event => %s", employee.toString()));
 
-        Message<Optional<EmployeeEntity>> message = MessageBuilder.withPayload(employee)
+        Message<EmployeeEntity> message = MessageBuilder.withPayload(employee)
                 .setHeader(KafkaHeaders.TOPIC ,topic.name())
                 .build();
         kafkaTemplate.send(message);
